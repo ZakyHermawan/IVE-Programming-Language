@@ -2,7 +2,7 @@
 
 test_file=$1
 ./build/ive "$test_file" -emit=mlir 2>&1 | \
-  ~/workspace/llvm-project/mlir/utils/generate-test-checks.py \
+  $LLVM_SRC/mlir/utils/generate-test-checks.py \
   --source "$test_file" \
   --source_delim_regex='def ' \
   --check-prefix='CHECK' \
